@@ -3,15 +3,24 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Link from "next/link";
-
+import Swal from 'sweetalert2';
 import {
     FaFacebookF,
     FaGithub,
     FaInstagram,
+    FaInstagramSquare,
+    FaLinkedin,
     FaLinkedinIn,
 } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 const Contact = () => {
+    const resetForm = () => {
+        // Get the form element
+        const formElement = form.current;
+
+        // Clear all form fields
+        formElement.reset();
+    };
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
@@ -19,6 +28,9 @@ const Contact = () => {
         emailjs.sendForm('service_ccizs79', 'template_ay9iycv', form.current, 'ZTEwb_0sV_ODJumi1')
             .then((result) => {
                 console.log(result.text);
+                Swal.fire("Message Sent, We Will get in contact soon ❤️");
+                resetForm();
+
             }, (error) => {
                 console.log(error.text);
             });
@@ -55,18 +67,29 @@ const Contact = () => {
                                     Connect With Me
                                 </p>
                                 <div className="flex items-center justify-between py-4">
-                                    <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                        <FaLinkedinIn />
-                                    </div>
-                                    <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                        <FaGithub />
-                                    </div>
-                                    <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                        <FaFacebookF />
-                                    </div>
-                                    <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                        <FaInstagram />
-                                    </div>
+                                    <Link
+                                        href="https://www.linkedin.com/in/debaroon-deb-roy-2410a2277"
+                                        target="_blank"
+                                    >
+                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
+                                            <FaLinkedin />
+                                        </div>
+                                    </Link>
+                                    <Link href="https://github.com/Debaroon2103/">
+                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
+                                            <FaGithub />
+                                        </div>
+                                    </Link>
+                                    <Link href="https://www.facebook.com/debaroon.debroy.71">
+                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
+                                            <FaFacebookF />
+                                        </div>
+                                    </Link>
+                                    <Link href="https://www.instagram.com/debaroon__deb_roy/">
+                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
+                                            <FaInstagramSquare />
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +117,9 @@ const Contact = () => {
                                         <input
                                             type="number"
                                             className="border-2 rounded-lg p-3 flex"
-                                            placeholder="Phone Number"
+                                            placeholder="Phone Number(Optional)"
                                             name="user_number"
+
                                         />
                                     </div>
                                 </div>

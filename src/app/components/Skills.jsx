@@ -94,7 +94,7 @@ const Skills = () => {
                                     alt="/"
                                 />
                                 <div className="flex flex-col items-center justify-center mt-10">
-                                    <h3>Css</h3>
+                                    <h3>Express Js</h3>
                                 </div>
                             </div>
                         </div>

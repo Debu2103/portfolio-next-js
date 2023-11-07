@@ -102,19 +102,19 @@ const Navbar = () => {
                         </div>
                         <div className="py-4 flex flex-col">
                             <ul className="uppercase ">
-                                <Link href="/">
+                                <Link href="/#home">
                                     <li className="py-4 text-sm"> Home</li>
                                 </Link>
-                                <Link href="/src/app/components/About.jsx">
+                                <Link href="/#about">
                                     <li className="py-4 text-sm"> About</li>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/#skills">
                                     <li className="py-4 text-sm"> Skills</li>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/#project">
                                     <li className="py-4 text-sm"> Project</li>
                                 </Link>
-                                <Link href="/">
+                                <Link href="/#contact">
                                     <li className="py-4 text-sm"> Contact</li>
                                 </Link>
                             </ul>
@@ -123,18 +123,29 @@ const Navbar = () => {
                                     Lets Connect
                                 </p>
                                 <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                                    <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
-                                        <FaLinkedin />
-                                    </div>
-                                    <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
-                                        <FaGithub />
-                                    </div>
-                                    <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
-                                        <FaFacebookF />
-                                    </div>
-                                    <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
-                                        <FaInstagramSquare />
-                                    </div>
+                                    <Link href="https://www.linkedin.com/in/debaroon-deb-roy-2410a2277">
+                                        <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
+                                            <FaLinkedin />
+                                        </div>
+                                    </Link>
+                                    <Link href="https://github.com/Debaroon2103/">
+                                        <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
+
+                                            <FaGithub />
+
+                                        </div>
+                                    </Link>
+                                    <Link href="https://www.facebook.com/debaroon.debroy.71">
+                                        <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
+
+                                            <FaFacebookF />
+                                        </div>
+                                    </Link>
+                                    <Link href="https://www.instagram.com/debaroon__deb_roy/">
+                                        <div className="shadow-gray-400 shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 rounded-full">
+                                            <FaInstagramSquare />
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

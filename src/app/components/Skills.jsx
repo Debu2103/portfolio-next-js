@@ -143,6 +143,7 @@ const Skills = () => {
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div className="p-6 shadow-xl shadow-gray-400 rounded-xl hover:scale-105 ease-in-out duration-300">
                         <div className="flex flex-cols-2 gap-4 justify-center items-center">

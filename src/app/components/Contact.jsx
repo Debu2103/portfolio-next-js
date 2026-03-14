@@ -1,176 +1,150 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import Link from "next/link";
-import Swal from 'sweetalert2';
-import {
-    FaFacebookF,
-    FaGithub,
-    FaInstagram,
-    FaInstagramSquare,
-    FaLinkedin,
-    FaLinkedinIn,
-} from "react-icons/fa";
+"use client";
+
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+
 const Contact = () => {
-    const resetForm = () => {
-        // Get the form element
-        const formElement = form.current;
+  const form = useRef();
 
-        // Clear all form fields
-        formElement.reset();
-    };
-    const form = useRef();
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_ccizs79",
+        "template_ay9iycv",
+        form.current,
+        "ZTEwb_0sV_ODJumi1"
+      )
+      .then(
+        () => {
+          Swal.fire({
+            title: "Message Sent! 🚀",
+            text: "Thanks for reaching out. I'll get back to you soon!",
+            icon: "success",
+            background: "#112240",
+            color: "#e5e7eb",
+            confirmButtonColor: "#00d4ff",
+          });
+          form.current.reset();
+        },
+        () => {
+          Swal.fire({
+            title: "Oops!",
+            text: "Something went wrong. Please try again.",
+            icon: "error",
+            background: "#112240",
+            color: "#e5e7eb",
+            confirmButtonColor: "#ff2d75",
+          });
+        }
+      );
+  };
 
-        emailjs.sendForm('service_ccizs79', 'template_ay9iycv', form.current, 'ZTEwb_0sV_ODJumi1')
-            .then((result) => {
-                console.log(result.text);
-                Swal.fire("Message Sent, We Will get in contact soon ❤️");
-                resetForm();
+  return (
+    <section id="contact" className="py-20 lg:py-28 pb-32 lg:pb-20">
+      <div className="section-heading lg:hidden">
+        <h2>Contact</h2>
+      </div>
 
-            }, (error) => {
-                console.log(error.text);
-            });
-    };
-    return (
-        <div id="contact" className="w-full lg:h-screen">
-            <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
-                <p className="text-xl tracking-widest uppercase text-[5651e5]">
-                    Contact
-                </p>
-                <h2 className="py-4">Get In Touch</h2>
-                <div className="grid lg:grid-cols-5 gap-8">
-                    {/* LEft */}
-                    <div className="col-span-3 lg:col-span-2 w-full h-full  rounded-xl p-4">
-                        <div className="lg:p-4 h-full rounded-xl">
-                            <img
-                                src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                className="rounded-xl hover:scale-105 ease-in duration-300"
-                                alt="/"
-                            />
-                            <div>
-                                <h2 className="py-4 ">Debaroon Deb Roy</h2>
-                                <p>Full Stack Developer</p>
-                                <p className="py-4">
-                                    Im Available for freelancing or full-time positions. Contact
-                                    me and lets talk
-                                </p>
-                            </div>
-                            <div>
-                                <p
-                                    className="uppercase
-                             pt-8"
-                                >
-                                    Connect With Me
-                                </p>
-                                <div className="flex items-center justify-between py-4">
-                                    <Link
-                                        href="https://www.linkedin.com/in/debaroon-deb-roy-2410a2277"
-                                        target="_blank"
-                                    >
-                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                            <FaLinkedin />
-                                        </div>
-                                    </Link>
-                                    <Link href="https://github.com/Debaroon2103/">
-                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                            <FaGithub />
-                                        </div>
-                                    </Link>
-                                    <Link href="https://www.facebook.com/debaroon.debroy.71">
-                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                            <FaFacebookF />
-                                        </div>
-                                    </Link>
-                                    <Link href="https://www.instagram.com/debaroon__deb_roy/">
-                                        <div className="shadow-gray-400 shadow-lg p-6 cursor-pointer hover:scale-110 ease-in duration-300 rounded-full">
-                                            <FaInstagramSquare />
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Right */}
+      {/* Contact intro */}
+      <div className="mb-8">
+        <p className="text-gray-400 leading-relaxed text-sm sm:text-[15px] max-w-[480px]">
+          I&apos;m currently looking for new opportunities. Whether you have a
+          question, a project idea, or just want to say hi — my inbox is always
+          open. I&apos;ll do my best to get back to you!
+        </p>
+      </div>
 
-                    <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
-                        <div className="p-4">
-                            <form ref={form} onSubmit={sendEmail}>
-                                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                                    <div className="flex flex-col ">
-                                        <label className="uppercase text-sm py-2">Name</label>
-                                        <input
-                                            type="text"
-                                            className="border-2 rounded-lg p-3 flex"
-                                            placeholder="Your Name"
-                                            required
-                                            name="user_name"
-                                        />
-                                    </div>
-                                    <div className="flex flex-col ">
-                                        <label className="uppercase text-sm py-2">
-                                            Phone Number
-                                        </label>
-                                        <input
-                                            type="number"
-                                            className="border-2 rounded-lg p-3 flex"
-                                            placeholder="Phone Number(Optional)"
-                                            name="user_number"
-
-                                        />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col py-2">
-                                    <label className="uppercase text-sm py-2">Email</label>
-                                    <input
-                                        type="email"
-                                        className="border-2 rounded-lg p-3 flex"
-                                        placeholder="Email"
-                                        required={true}
-                                        name="user_email"
-                                    />
-                                </div>
-                                <div className="flex flex-col py-2">
-                                    <label className="uppercase text-sm py-2">Subject</label>
-                                    <input
-                                        type="text"
-                                        className="border-2 rounded-lg p-3 flex"
-                                        placeholder="Subject"
-                                        required={true}
-                                        name="user_email"
-                                    />
-                                </div>
-                                <div className="flex flex-col py-2">
-                                    <label className="uppercase text-sm py-2">Message</label>
-                                    <textarea
-                                        className="border-2 rounded-lg p-3 border-gray-300"
-                                        rows="10"
-                                        name="message"
-                                    ></textarea>
-                                </div>
-                                <button className="w-full p-4 text-gray-100 mt-4">
-                                    Send Message
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-center py-12 ">
-                    <Link href="/">
-                        <div
-                            className="rounded-full shadow-gray-600
-                    p-6 cursor-pointer hover:scale-110 ease-in duration-300 shadow-md  bg-blue-300 hover:bg-blue-400 hover:text-white"
-                        >
-                            <HiOutlineChevronDoubleUp />
-                        </div>
-                    </Link>
-                </div>
+      {/* Contact Form */}
+      <div className="glass-card p-6 sm:p-8">
+        <form ref={form} onSubmit={sendEmail} className="space-y-5">
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold block mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-input"
+                placeholder="Your name"
+                required
+                name="user_name"
+              />
             </div>
-        </div>
-    );
+            <div>
+              <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold block mb-2">
+                Phone
+              </label>
+              <input
+                type="number"
+                className="form-input"
+                placeholder="Optional"
+                name="user_number"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold block mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              className="form-input"
+              placeholder="your@email.com"
+              required
+              name="user_email"
+            />
+          </div>
+
+          <div>
+            <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold block mb-2">
+              Subject
+            </label>
+            <input
+              type="text"
+              className="form-input"
+              placeholder="What's this about?"
+              required
+              name="subject"
+            />
+          </div>
+
+          <div>
+            <label className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold block mb-2">
+              Message
+            </label>
+            <textarea
+              className="form-input resize-none"
+              rows="5"
+              placeholder="Tell me about your project..."
+              name="message"
+            />
+          </div>
+
+          <button type="submit" className="btn-neon w-full py-4 text-sm">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      {/* Back to top */}
+      <div className="flex justify-center mt-12">
+        <a
+          href="#home"
+          className="social-icon w-12 h-12 border border-white/[0.06] rounded-full hover:border-neon-blue/30 transition-all group"
+        >
+          <HiOutlineChevronDoubleUp
+            size={18}
+            className="text-gray-500 group-hover:text-neon-blue transition-colors"
+          />
+        </a>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;

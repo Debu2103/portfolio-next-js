@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debaroon Deb Roy — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== PAGE SETUP ===== */
+    html { font-size: 14px; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #e8edf2;
+      color: #334155;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== A4 RESUME CONTAINER ===== */
+    .resume {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      background: #fff;
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.12),
+        0 4px 15px rgba(0,0,0,0.06);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ===== LEFT SIDEBAR ===== */
+    .sidebar {
+      background: linear-gradient(175deg, #0a192f 0%, #112240 50%, #0d2137 100%);
+      color: #94a3b8;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle decorative glow */
+    .sidebar::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(0,212,255,0.08), transparent 70%);
+      border-radius: 50%;
+    }
+    .sidebar::after {
+      content: '';
+      position: absolute;
+      bottom: 40px;
+      left: -40px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(123,47,247,0.06), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .sidebar-inner {
+      position: relative;
+      z-index: 1;
+      padding: 36px 24px 32px;
+    }
+
+    /* Profile Section */
+    .profile-section {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid rgba(0,212,255,0.3);
+      object-fit: cover;
+      margin-bottom: 16px;
+      box-shadow: 0 0 20px rgba(0,212,255,0.1);
+    }
+
+    .profile-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .profile-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glowing divider */
+    .glow-divider {
+      height: 1px;
+      margin: 20px 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255,255,255,0.08) 20%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0.08) 80%,
+        transparent 100%
+      );
+      box-shadow: 0 0 8px rgba(255,255,255,0.08);
+    }
+
+    /* Sidebar Sections */
+    .sidebar-section { margin-bottom: 22px; }
+
+    .sidebar-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #00d4ff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,212,255,0.3), transparent);
+    }
+
+    /* Contact Info */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    .contact-item a {
+      color: #cbd5e1;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .skill-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.62rem;
+      font-weight: 500;
+      border-radius: 999px;
+      background: rgba(0,212,255,0.08);
+      color: #67e8f9;
+      border: 1px solid rgba(0,212,255,0.12);
+      letter-spacing: 0.02em;
+    }
+
+    /* Languages */
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+    }
+    .language-name { color: #e2e8f0; font-weight: 500; }
+    .language-level {
+      font-size: 0.6rem;
+      color: #00d4ff;
+      background: rgba(0,212,255,0.08);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* ===== RIGHT MAIN CONTENT ===== */
+    .main-content {
+      padding: 36px 32px 28px;
+    }
+
+    /* Main Header / Summary */
+    .main-header {
+      margin-bottom: 24px;
+    }
+    .main-name {
+      font-family:'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .main-name span {
+      background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .main-subtitle {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    .summary {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: #475569;
+      line-height: 1.7;
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, #00d4ff, #7b2ff7) 1;
+      padding-left: 14px;
+    }
+
+    /* Section Heading */
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #0f172a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: linear-gradient(180deg, #00d4ff, #7b2ff7);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, #e2e8f0, transparent);
+    }
+
+    /* Experience Card */
+    .experience-card {
+      position: relative;
+      padding: 14px 0 14px 20px;
+      border-left: 2px solid #e2e8f0;
+      margin-bottom: 4px;
+    }
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+      border: 2px solid #fff;
+    }
+    .experience-card:last-child {
+      border-left-color: transparent;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+      gap: 12px;
+    }
+    .exp-role {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .exp-company {
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: #7b2ff7;
+    }
+    .exp-date {
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: #94a3b8;
+      background: #f1f5f9;
+      padding: 2px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exp-date.current {
+      background: rgba(0,212,255,0.08);
+      color: #0891b2;
+    }
+
+    .exp-achievements {
+      list-style: none;
+      padding: 0;
+      margin-top: 6px;
+    }
+    .exp-achievements li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.72rem;
+      color: #475569;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+    .exp-achievements li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #00d4ff;
+      font-weight: 700;
+    }
+
+    .exp-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .exp-tech-tag {
+      font-size: 0.58rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #f0f9ff;
+      color: #0284c7;
+      border: 1px solid #e0f2fe;
+    }
+
+    /* Projects Section */
+    .project-card {
+      padding: 14px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: border-color 0.3s;
+    }
+    .project-card:hover {
+      border-color: #00d4ff;
+    }
+    .project-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-name .badge {
+      font-size: 0.52rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .project-desc {
+      font-size: 0.68rem;
+      color: #64748b;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 12px;
+    }
+    .edu-degree {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .edu-school {
+      font-size: 0.72rem;
+      color: #7b2ff7;
+      font-weight: 500;
+    }
+    .edu-details {
+      font-size: 0.66rem;
+      color: #94a3b8;
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      html { font-size: 12px; }
+      body { background: #fff; margin: 0; }
+      .resume {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+      .project-card:hover { border-color: #e2e8f0; }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+
+    /* ===== RESPONSIVE (for screen viewing) ===== */
+    @media screen and (max-width: 800px) {
+      .resume {
+        width: 100%;
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+        min-height: auto;
+      }
+      .sidebar-inner { padding: 24px 20px; }
+      .profile-section { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .profile-photo { width: 70px; height: 70px; margin-bottom: 0; }
+      .main-content { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="resume">
+  <!-- ===== LEFT SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <!-- Profile -->
+      <div class="profile-section">
+        <img
+          src="dp.jpg"
+          alt="Debaroon Deb Roy"
+          class="profile-photo"
+        />
+        <div>
+          <div class="profile-name">Debaroon Deb Roy</div>
+          <div class="profile-title">Full Stack Developer</div>
+        </div>
+      </div>
+
+      <div class="glow-divider"></div>
+
+      <!-- Contact -->
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Contact</div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <span>India</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <a href="https://www.linkedin.com/in/debaroon-deb-roy-2410a2277" target="_blank">linkedin.com/in/debaroon-deb-roy</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🐙</div>
+          <a href="https://github.com/Debaroon2103/" target="_blank">github.com/Debaroon2103</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📘</div>
+          <a href="https://www.facebook.com/debaroon.debroy.71" target="_blank">facebook.com/debaroon.debroy</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📸</div>
+          <a href="https://www.instagram.com/debaroon__deb_roy/" target="_blank">instagram.com/debaroon__deb_roy</a>
+        </div>
+      </div>
+
+      <div class="glow-divider"></div>
+
+      <!-- Skills -->
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Tech Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">JWT Auth</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Tools & Testing</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Jest</span>
+            <span class="skill-tag">Swagger</span>
+            <span class="skill-tag">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glow-divider"></div>
+
+      <!-- Languages -->
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Languages</div>
+        <div class="language-item">
+          <span class="language-name">English</span>
+          <span class="language-level">Fluent</span>
+        </div>
+        <div class="language-item">
+          <span class="language-name">Hindi</span>
+          <span class="language-level">Native</span>
+        </div>
+        <div class="language-item">
+          <span class="language-name">Bengali</span>
+          <span class="language-level">Native</span>
+        </div>
+      </div>
+
+      <div class="glow-divider"></div>
+
+      <!-- Interests -->
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Interests</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Open Source</span>
+          <span class="skill-tag">Cloud Computing</span>
+          <span class="skill-tag">AI / ML</span>
+          <span class="skill-tag">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== RIGHT MAIN CONTENT ===== -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="main-name">
+        Debaroon <span>Deb Roy</span>
+      </div>
+      <div class="main-subtitle">Full Stack Developer · MERN Stack · 1.8+ Years Experience</div>
+      <p class="summary">
+        Results-driven Full Stack Developer with 1.8+ years of professional experience building scalable, enterprise-grade web applications at OmniMinds Consulting Services LLP. Proficient in React, TypeScript, Node.js, Express.js, and MongoDB. Proven track record of architecting production-level backend systems and driving frontend development with modern tools and best practices.
+      </p>
+    </header>
+
+    <!-- Experience -->
+    <section style="margin-bottom: 22px;">
+      <div class="section-title">Professional Experience</div>
+
+      <div class="experience-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Full Stack Developer</div>
+            <div class="exp-company">OmniMinds Consulting Services LLP</div>
+          </div>
+          <span class="exp-date current">2024 — Present</span>
+        </div>
+        <ul class="exp-achievements">
+          <li>Currently driving the <strong>business frontend development</strong> using React and TypeScript, building responsive, scalable UI components for enterprise clients</li>
+          <li>Collaborating with cross-functional teams of 15+ developers to deliver AI, cloud, and full-stack solutions across 8+ industries</li>
+          <li>Implementing modern development practices including component-based architecture, state management, and responsive design patterns</li>
+          <li>Contributing to the company's mission of delivering scalable, cost-effective IT solutions as an AWS Certified Partner</li>
+        </ul>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">React</span>
+          <span class="exp-tech-tag">TypeScript</span>
+          <span class="exp-tech-tag">Tailwind CSS</span>
+          <span class="exp-tech-tag">REST APIs</span>
+          <span class="exp-tech-tag">Git</span>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Backend Developer</div>
+            <div class="exp-company">OmniMinds Consulting Services LLP</div>
+          </div>
+          <span class="exp-date">2024</span>
+        </div>
+        <ul class="exp-achievements">
+          <li>Architected and developed the complete <strong>customer management backend</strong> system from scratch, serving as the foundation for client-facing enterprise applications</li>
+          <li>Designed and implemented <strong>RESTful APIs</strong> with JWT authentication, role-based access control, and comprehensive data validation</li>
+          <li>Created comprehensive <strong>API documentation</strong> using Swagger/OpenAPI, enabling seamless integration for frontend teams</li>
+          <li>Achieved <strong>90%+ test coverage</strong> with extensive unit and integration tests using Jest</li>
+        </ul>
+        <div class="exp-tech">
+          <span class="exp-tech-tag">Node.js</span>
+          <span class="exp-tech-tag">Express.js</span>
+          <span class="exp-tech-tag">MongoDB</span>
+          <span class="exp-tech-tag">Jest</span>
+          <span class="exp-tech-tag">Swagger</span>
+          <span class="exp-tech-tag">JWT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section style="margin-bottom: 22px;">
+      <div class="section-title">Key Projects</div>
+
+      <div class="project-card">
+        <div class="project-name">
+          Customer Management Backend
+          <span class="badge">Professional</span>
+        </div>
+        <p class="project-desc">
+          Production-grade backend system with RESTful APIs, JWT auth, RBAC, data validation, Swagger docs, and 90%+ Jest test coverage. Core infrastructure for OmniMinds' enterprise client applications.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">E-Commerce Application</div>
+        <p class="project-desc">
+          Full-featured React e-commerce app with product browsing, cart management, user authentication, and responsive design across devices.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Real-Time Chat Application</div>
+        <p class="project-desc">
+          Instant messaging app built with React and Socket.IO featuring live message updates, user presence indicators, and clean UI.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Restaurant Website</div>
+        <p class="project-desc">
+          Responsive restaurant website with menu showcases, reservation features, and smooth animations using HTML, CSS, and JavaScript.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor's in Computer Science / IT</div>
+        <div class="edu-school">University Details</div>
+        <div class="edu-details">Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

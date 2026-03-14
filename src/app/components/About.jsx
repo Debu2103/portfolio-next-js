@@ -1,37 +1,79 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
+"use client";
 
 const About = () => {
-    return (
-        <div id="about" className="w-full md:h-screen p-2 flex items-center py-16 -mt-10 md:mt-0">
-            <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 ">
-                <div className="col-span-2">
-                    <p className="uppercase text-xl tracking-widest text-[#5651e5] text-center md:text-left">About</p>
-                    <h2 className="py-4 text-center md:text-left">Who I Am</h2>
+  return (
+    <section id="about" className="py-20 lg:py-28">
+      <div className="section-heading lg:hidden">
+        <h2>About</h2>
+      </div>
 
-                  <p className="py-2 text-gray-600 text-center md:text-left">
-  Hi, I'm a MERN stack and JavaScript developer with 1 year of professional
-  experience in building efficient, innovative, and user-focused web
-  applications. I have a solid foundation in modern web technologies,
-  including HTML, CSS, JavaScript, React, Node.js, Express.js, and MongoDB.
-  Additionally, I have hands-on experience with Swagger for API documentation
-  and writing unit and integration tests in Node.js using Jest. I also have
-  basic familiarity with Python.
-</p>
-<p className="py-2 text-gray-600 text-center md:text-left">
-  I am a fast learner with a strong commitment to continuous improvement and
-  clean, maintainable code. I value teamwork, collaboration, and effective
-  problem-solving, and I strive to contribute meaningfully to every project I
-  work on.
-</p>
+      <div className="space-y-5">
+        <p className="text-gray-400 leading-relaxed text-sm sm:text-[15px]">
+          I&apos;m a Full Stack Developer with{" "}
+          <span className="text-white font-medium">1.8+ years</span> of
+          professional experience building efficient, innovative, and
+          user-focused web applications at{" "}
+          <a
+            href="https://omnimindsconsulting.com"
+            target="_blank"
+            className="neon-text font-semibold hover:underline"
+          >
+            OmniMinds Consulting Services LLP
+          </a>
+          , a software development company specializing in AI, cloud computing,
+          and full-stack development services — an AWS Certified Partner
+          delivering enterprise solutions worldwide.
+        </p>
 
-                </div>
-                <div className="w-full h-auto m-auto flex items-center justify-center">
-                    <img className="rounded-full shadow-lg shadow-gray-500 p-3 hover:scale-105 duration-150 ease-linear hover:shadow-blue-500 hover:shadow-2xl w-56 md:w-auto" src="/dp.jpg" alt="/" />
-                </div>
+        <p className="text-gray-400 leading-relaxed text-sm sm:text-[15px]">
+          I have a solid foundation in modern web technologies including{" "}
+          <span className="text-white">
+            React, TypeScript, JavaScript, Node.js, Express.js, and MongoDB
+          </span>
+          . I architected and built the complete{" "}
+          <span className="text-neon-cyan font-medium">
+            customer management backend
+          </span>{" "}
+          system from the ground up, and I&apos;m currently driving the{" "}
+          <span className="text-neon-purple font-medium">
+            business frontend
+          </span>{" "}
+          development with React and TypeScript.
+        </p>
+
+        <p className="text-gray-400 leading-relaxed text-sm sm:text-[15px]">
+          I also have hands-on experience with Swagger for API documentation and
+          writing unit & integration tests using{" "}
+          <span className="text-white">Jest</span>. I value clean, maintainable
+          code, meaningful collaboration, and continuous growth.
+        </p>
+
+        {/* Profile image with glow */}
+        <div className="pt-6 flex items-start gap-6">
+          <div className="relative group shrink-0">
+            <div className="absolute -inset-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink rounded-2xl opacity-20 group-hover:opacity-50 blur-lg transition-all duration-700" />
+            <img
+              src="/dp.jpg"
+              alt="Debaroon Deb Roy"
+              className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border border-white/10 group-hover:border-neon-blue/30 transition-all duration-500"
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="flex flex-wrap gap-2">
+              {["1.8+ Yrs", "10+ Projects", "Enterprise-grade"].map((s) => (
+                <span key={s} className="tech-tag">{s}</span>
+              ))}
             </div>
+            <p className="text-xs text-gray-500 leading-relaxed max-w-[300px]">
+              Fast learner committed to building scalable solutions and
+              contributing meaningfully to every project.
+            </p>
+          </div>
         </div>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default About;

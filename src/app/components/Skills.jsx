@@ -9,14 +9,10 @@ const skills = [
   { name: "Node.js", image: "/skills/node.png" },
   { name: "Express.js", image: "/skills/exp.png" },
   { name: "MongoDB", image: "/skills/mongo.png" },
-  { name: "Next.js", image: "/skills/nextjs.png" },
-  { name: "HTML", image: "/skills/html.png" },
-  { name: "CSS", image: "/skills/css.png" },
   { name: "Tailwind", image: "/skills/tailwind.png" },
   { name: "GitHub", image: "/skills/github1.png" },
   { name: "Swagger", image: "/skills/swagger1.png" },
   { name: "Jest", image: "/skills/jest.png" },
-  { name: "Firebase", image: "/skills/firebase.png" },
 ];
 
 const Skills = () => {

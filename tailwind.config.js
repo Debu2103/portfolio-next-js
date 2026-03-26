@@ -9,37 +9,37 @@ module.exports = {
     extend: {
       colors: {
         dark: {
-          950: '#020c1b',
-          900: '#0a192f',
-          800: '#112240',
-          700: '#1d3461',
-          600: '#233554',
-          500: '#2a3f5f',
+          950: '#050505',
+          900: '#080808',
+          800: '#111111',
+          700: '#1a1a1a',
+          600: '#222222',
+          500: '#2a2a2a',
         },
         neon: {
-          blue: '#00d4ff',
-          purple: '#7b2ff7',
-          pink: '#ff2d75',
-          cyan: '#00f5d4',
-          violet: '#9945ff',
+          blue: '#d4af37',
+          purple: '#b8860b',
+          pink: '#ffd700',
+          cyan: '#f0c040',
+          violet: '#daa520',
         },
         glass: {
-          light: 'rgba(255, 255, 255, 0.05)',
-          medium: 'rgba(255, 255, 255, 0.08)',
-          strong: 'rgba(255, 255, 255, 0.12)',
+          light: 'rgba(255, 255, 255, 0.04)',
+          medium: 'rgba(255, 255, 255, 0.06)',
+          strong: 'rgba(255, 255, 255, 0.10)',
         }
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'neon-gradient': 'linear-gradient(135deg, #00d4ff, #7b2ff7, #ff2d75)',
-        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+        'neon-gradient': 'linear-gradient(135deg, #d4af37, #b8860b, #ffd700)',
+        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))',
       },
       boxShadow: {
-        'neon': '0 0 15px rgba(0, 212, 255, 0.3), 0 0 30px rgba(123, 47, 247, 0.15)',
-        'neon-strong': '0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(123, 47, 247, 0.3)',
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
-        'glass-hover': '0 12px 40px rgba(0, 212, 255, 0.2)',
+        'neon': '0 0 15px rgba(212, 175, 55, 0.25), 0 0 30px rgba(184, 134, 11, 0.1)',
+        'neon-strong': '0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(184, 134, 11, 0.2)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.5)',
+        'glass-hover': '0 12px 40px rgba(212, 175, 55, 0.12)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -59,8 +59,8 @@ module.exports = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 10px rgba(0, 212, 255, 0.3)' },
-          '100%': { boxShadow: '0 0 25px rgba(123, 47, 247, 0.5), 0 0 50px rgba(0, 212, 255, 0.2)' },
+          '0%': { boxShadow: '0 0 10px rgba(212, 175, 55, 0.25)' },
+          '100%': { boxShadow: '0 0 25px rgba(184, 134, 11, 0.4), 0 0 50px rgba(212, 175, 55, 0.15)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(40px)', opacity: '0' },

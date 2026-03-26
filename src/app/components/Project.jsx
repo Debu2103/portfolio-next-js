@@ -12,9 +12,9 @@ const projects = [
   {
     title: "Customer Management Backend",
     description:
-      "Architected and developed a production-grade customer management backend for OmniMinds Consulting — RESTful APIs, JWT authentication, role-based access control, data validation, comprehensive Swagger docs, and 90%+ test coverage with Jest.",
+      "Architected and developed a production-grade customer management backend for OmniMinds Consulting — RESTful APIs, JWT authentication, role-based access control, data validation, comprehensive Swagger docs, and 90%+ test coverage with Jest. (Private Project)",
     tech: ["Node.js", "Express.js", "MongoDB", "Jest", "Swagger", "JWT"],
-    github: "https://github.com/Debaroon2103/",
+    github: null,
     image: null,
     featured: true,
   },
@@ -52,18 +52,21 @@ const Project = () => {
       </div>
 
       <div className="space-y-4">
-        {projects.map((project) => (
-          <Link
+        {projects.map((project) => {
+          const Wrapper = project.github ? Link : "div";
+          const props = project.github ? { href: project.github, target: "_blank" } : {};
+
+          return (
+          <Wrapper
             key={project.title}
-            href={project.github}
-            target="_blank"
+            {...props}
             className={`experience-card block group ${
               project.featured
                 ? "border border-white/[0.04] bg-white/[0.01]"
                 : ""
             }`}
           >
-            <div className="flex items-start gap-5">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-5">
               {/* Image Thumbnail (for non-featured) */}
               {project.image && (
                 <div className="shrink-0 w-[110px] h-[70px] rounded-lg overflow-hidden border border-white/[0.06] hidden sm:block">
@@ -86,31 +89,34 @@ const Project = () => {
                 </div>
               )}
 
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 flex flex-col items-center sm:items-start w-full">
                 {/* Title */}
-                <h3 className="text-[15px] font-semibold text-gray-200 group-hover:text-neon-blue transition-colors flex flex-wrap items-center gap-2">
+                <h3 className={`text-[15px] font-semibold text-gray-200 transition-colors flex flex-wrap items-center justify-center sm:justify-start gap-2 ${project.github ? 'group-hover:text-neon-blue' : ''}`}>
                   {project.title}
-                  <FaExternalLinkAlt
-                    size={10}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-blue"
-                  />
+                  {project.github && (
+                    <FaExternalLinkAlt
+                      size={10}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-blue hidden sm:block"
+                    />
+                  )}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500 leading-relaxed mt-1.5 group-hover:text-gray-400 transition-colors">
+                <p className={`text-sm text-gray-500 leading-relaxed mt-1.5 transition-colors ${project.github ? 'group-hover:text-gray-400' : ''}`}>
                   {project.description}
                 </p>
 
                 {/* Tech */}
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-3 w-full">
                   {project.tech.map((t) => (
                     <span key={t} className="tech-tag">{t}</span>
                   ))}
                 </div>
               </div>
             </div>
-          </Link>
-        ))}
+          </Wrapper>
+          );
+        })}
       </div>
     </section>
   );

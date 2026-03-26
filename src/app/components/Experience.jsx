@@ -41,27 +41,27 @@ const Experience = () => {
             rel="noopener noreferrer"
             className="experience-card block group"
           >
-            {/* Period */}
-            <div className="flex items-start gap-6">
-              <div className="shrink-0 w-[110px] pt-1">
+            {/* Content Container */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-6">
+              <div className="shrink-0 sm:w-[110px] pt-1 mt-1 sm:mt-0 sm:mb-0 mb-1 w-full sm:w-auto">
                 <span className="text-[11px] uppercase tracking-wider text-gray-500 font-medium whitespace-nowrap">
                   {exp.period}
                 </span>
               </div>
 
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 flex flex-col items-center sm:items-start">
                 {/* Title & Company */}
-                <h3 className="text-[15px] font-semibold text-gray-200 group-hover:text-neon-blue transition-colors flex flex-wrap items-center gap-2">
+                <h3 className="text-[15px] font-semibold text-gray-200 group-hover:text-neon-blue transition-colors flex flex-wrap items-center justify-center sm:justify-start gap-2">
                   {exp.title} · {exp.company}
                   <FaExternalLinkAlt
                     size={10}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-blue"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity text-neon-blue hidden sm:block"
                   />
                 </h3>
 
                 {/* Current indicator */}
                 {exp.current && (
-                  <div className="flex items-center gap-2 mt-1.5">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mt-1.5">
                     <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
                     <span className="text-[10px] uppercase tracking-wider text-emerald-400/80 font-medium">
                       Current Role
@@ -75,7 +75,7 @@ const Experience = () => {
                 </p>
 
                 {/* Tech tags */}
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-3 w-full">
                   {exp.tech.map((t) => (
                     <span key={t} className="tech-tag">{t}</span>
                   ))}
@@ -89,7 +89,9 @@ const Experience = () => {
       {/* Resume link */}
       <div className="mt-8 pl-0 lg:pl-[134px]">
         <a
-          href="#contact"
+          href="/resume.html"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-neon-blue transition-colors group font-medium"
         >
           <span>View Full Résumé</span>

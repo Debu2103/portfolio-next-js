@@ -107,7 +107,7 @@ const Navbar = () => {
         >
           {/* Mobile Drawer */}
           <div
-            className={`fixed top-0 h-screen bg-dark-800 border-r border-white/5 p-8 ease-in-out duration-500 z-[102] ${
+            className={`fixed top-0 h-screen bg-[#0d0d0d] border-r border-white/5 p-8 ease-in-out duration-500 z-[102] ${
               nav
                 ? "left-0 w-[80%] sm:w-[60%] md:w-[45%]"
                 : "left-[-100%] w-[80%] sm:w-[60%] md:w-[45%]"

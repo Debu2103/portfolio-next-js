@@ -24,23 +24,16 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center py-20 lg:py-24"
+      className="min-h-screen flex flex-col pt-24 pb-20 lg:justify-center lg:py-24"
     >
       <div
         className={`transition-all duration-1000 ${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        {/* Status badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] bg-white/[0.02] mb-8">
-          <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-          <span className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">
-            Available for opportunities
-          </span>
-        </div>
 
         {/* Mobile-only name (sidebar shows on desktop) */}
-        <div className="lg:hidden mb-6">
+        <div className="lg:hidden mb-6 text-center sm:text-left">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
             <span className="neon-text">Debaroon</span>
             <br />
@@ -51,7 +44,7 @@ const HeroSection = () => {
         </div>
 
         {/* Intro paragraph */}
-        <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-[540px]">
+        <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-[540px] text-center sm:text-left mx-auto sm:mx-0">
           Building scalable enterprise applications with{" "}
           <span className="text-white font-medium">React</span>,{" "}
           <span className="text-white font-medium">TypeScript</span> &{" "}
@@ -63,7 +56,7 @@ const HeroSection = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4 mt-8">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-4 mt-8">
           <a href="#project" className="btn-neon text-sm">
             View My Work
           </a>
@@ -73,7 +66,7 @@ const HeroSection = () => {
         </div>
 
         {/* Mobile social icons */}
-        <div className="flex items-center gap-5 mt-10 lg:hidden">
+        <div className="flex items-center justify-center sm:justify-start gap-5 mt-10 lg:hidden">
           {socialLinks.map((s, i) => (
             <Link key={i} href={s.href} target="_blank" className="social-icon">
               {s.icon}
@@ -82,7 +75,7 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll hint */}
-        <div className="flex items-center gap-3 mt-16 text-gray-600">
+        <div className="hidden sm:flex items-center gap-3 mt-16 text-gray-600">
           <div className="glow-strip-vertical h-8" />
           <div className="flex flex-col items-start gap-1">
             <span className="text-[10px] uppercase tracking-[0.3em]">

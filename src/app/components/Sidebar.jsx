@@ -42,7 +42,7 @@ const socialLinks = [
 
 const Sidebar = ({ activeSection }) => {
   return (
-    <header className="hidden lg:flex lg:flex-col lg:justify-between lg:w-1/2 lg:max-w-[520px] lg:sticky lg:top-0 lg:h-screen lg:py-20 lg:px-12 xl:px-16">
+    <header className="hidden lg:flex lg:flex-col lg:justify-between lg:w-1/2 lg:max-w-[520px] lg:sticky lg:top-0 lg:h-screen lg:py-24 lg:px-12 xl:px-16">
       {/* Top section */}
       <div>
         {/* Name & Title */}

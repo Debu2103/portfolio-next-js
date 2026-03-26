@@ -28,7 +28,7 @@
       }
 
       html {
-        font-size: 13px;
+        font-size: 12px;
       }
 
       body {
@@ -43,7 +43,7 @@
       .page {
         width: 210mm;
         min-height: 297mm;
-        margin: 10mm auto;
+        margin: 8mm auto;
         background: var(--white);
         box-shadow:
           0 18px 45px rgba(15, 23, 42, 0.14),
@@ -58,19 +58,19 @@
           var(--navy-700) 100%
         );
         color: var(--white);
-        padding: 14mm 14mm 10mm;
+        padding: 10mm 12mm 7mm;
       }
 
       .header-top {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 18px;
+        gap: 12px;
       }
 
       .identity h1 {
         margin: 0;
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.05;
         letter-spacing: -0.03em;
         font-weight: 800;
@@ -81,8 +81,8 @@
       }
 
       .role {
-        margin-top: 6px;
-        font-size: 0.82rem;
+        margin-top: 4px;
+        font-size: 0.72rem;
         font-weight: 700;
         letter-spacing: 0.16em;
         text-transform: uppercase;
@@ -90,22 +90,23 @@
       }
 
       .summary {
-        margin-top: 12px;
-        max-width: 480px;
-        font-size: 0.82rem;
+        margin-top: 8px;
+        max-width: 455px;
+        font-size: 0.73rem;
+        line-height: 1.45;
         color: #d8e3ef;
       }
 
       .contact-grid {
-        min-width: 230px;
+        min-width: 205px;
         display: grid;
-        gap: 6px;
-        font-size: 0.74rem;
+        gap: 4px;
+        font-size: 0.68rem;
         align-content: center;
-        padding: 10px 12px;
-        min-height: 108px;
+        padding: 8px 10px;
+        min-height: 84px;
         border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
+        border-radius: 10px;
         background: rgba(255, 255, 255, 0.04);
       }
 
@@ -115,7 +116,7 @@
 
       .contact-label {
         display: inline-block;
-        min-width: 70px;
+        min-width: 62px;
         font-weight: 700;
         color: var(--cyan-500);
       }
@@ -127,18 +128,18 @@
 
       .contact-card {
         display: grid;
-        gap: 9px;
+        gap: 7px;
       }
 
       .contact-row {
-        font-size: 0.72rem;
-        line-height: 1.4;
+        font-size: 0.66rem;
+        line-height: 1.3;
       }
 
       .contact-row-label {
         display: block;
         margin-bottom: 2px;
-        font-size: 0.66rem;
+        font-size: 0.6rem;
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -152,8 +153,8 @@
       }
 
       .accent-bar {
-        margin-top: 12px;
-        height: 3px;
+        margin-top: 8px;
+        height: 2px;
         width: 100%;
         background: linear-gradient(
           90deg,
@@ -165,9 +166,9 @@
 
       .content {
         display: grid;
-        grid-template-columns: 66mm 1fr;
-        gap: 10mm;
-        padding: 10mm 14mm 12mm;
+        grid-template-columns: 60mm 1fr;
+        gap: 7mm;
+        padding: 7mm 12mm 8mm;
       }
 
       .sidebar,
@@ -176,7 +177,7 @@
       }
 
       .section {
-        margin-bottom: 9mm;
+        margin-bottom: 5.5mm;
       }
 
       .section:last-child {
@@ -187,8 +188,8 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        margin: 0 0 10px;
-        font-size: 0.8rem;
+        margin: 0 0 7px;
+        font-size: 0.72rem;
         font-weight: 800;
         letter-spacing: 0.14em;
         text-transform: uppercase;
@@ -198,7 +199,7 @@
       .section-title::before {
         content: "";
         width: 4px;
-        height: 16px;
+        height: 13px;
         border-radius: 999px;
         background: linear-gradient(
           180deg,
@@ -220,14 +221,14 @@
       }
 
       .panel {
-        padding: 10px 11px;
+        padding: 8px 9px;
         border: 1px solid var(--slate-200);
-        border-radius: 10px;
+        border-radius: 8px;
         background: var(--slate-100);
       }
 
       .skill-group {
-        margin-bottom: 10px;
+        margin-bottom: 7px;
       }
 
       .skill-group:last-child {
@@ -235,12 +236,18 @@
       }
 
       .label {
-        margin-bottom: 5px;
-        font-size: 0.7rem;
+        margin-bottom: 3px;
+        font-size: 0.6rem;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: var(--slate-500);
+      }
+
+      .skill-line {
+        font-size: 0.64rem;
+        line-height: 1.35;
+        color: var(--slate-700);
       }
 
       .tags {
@@ -260,7 +267,7 @@
       }
 
       .detail-item {
-        margin-bottom: 10px;
+        margin-bottom: 7px;
       }
 
       .detail-item:last-child {
@@ -268,14 +275,14 @@
       }
 
       .detail-title {
-        font-size: 0.79rem;
+        font-size: 0.69rem;
         font-weight: 800;
         color: var(--slate-900);
       }
 
       .detail-subtitle {
         margin-top: 2px;
-        font-size: 0.72rem;
+        font-size: 0.63rem;
         font-weight: 700;
         color: var(--purple-600);
       }
@@ -289,7 +296,7 @@
       .language-list,
       .strength-list {
         display: grid;
-        gap: 7px;
+        gap: 5px;
       }
 
       .language-row,
@@ -297,7 +304,7 @@
         display: flex;
         justify-content: space-between;
         gap: 10px;
-        font-size: 0.72rem;
+        font-size: 0.64rem;
       }
 
       .language-name,
@@ -313,8 +320,8 @@
 
       .timeline-item {
         position: relative;
-        padding-left: 16px;
-        margin-bottom: 12px;
+        padding-left: 13px;
+        margin-bottom: 9px;
       }
 
       .timeline-item:last-child {
@@ -325,9 +332,9 @@
         content: "";
         position: absolute;
         left: 0;
-        top: 5px;
-        width: 8px;
-        height: 8px;
+        top: 4px;
+        width: 7px;
+        height: 7px;
         border-radius: 50%;
         background: linear-gradient(
           135deg,
@@ -340,8 +347,8 @@
         content: "";
         position: absolute;
         left: 3px;
-        top: 16px;
-        bottom: -10px;
+        top: 13px;
+        bottom: -7px;
         width: 2px;
         background: var(--slate-200);
       }
@@ -354,41 +361,42 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 12px;
+        gap: 10px;
       }
 
       .item-role {
-        font-size: 0.82rem;
+        font-size: 0.72rem;
         font-weight: 800;
         color: var(--slate-900);
       }
 
       .item-company {
         margin-top: 2px;
-        font-size: 0.73rem;
+        font-size: 0.64rem;
         font-weight: 700;
         color: var(--purple-600);
       }
 
       .item-date {
         flex-shrink: 0;
-        padding: 2px 8px;
+        padding: 1px 6px;
         border-radius: 999px;
         background: rgba(0, 212, 255, 0.08);
         color: #0891b2;
-        font-size: 0.64rem;
+        font-size: 0.56rem;
         font-weight: 800;
         white-space: nowrap;
       }
 
       .bullet-list {
-        margin: 7px 0 0;
-        padding-left: 14px;
+        margin: 5px 0 0;
+        padding-left: 12px;
       }
 
       .bullet-list li {
-        margin-bottom: 4px;
-        font-size: 0.71rem;
+        margin-bottom: 3px;
+        font-size: 0.63rem;
+        line-height: 1.35;
         color: var(--slate-600);
       }
 
@@ -397,8 +405,8 @@
       }
 
       .tech-line {
-        margin-top: 6px;
-        font-size: 0.68rem;
+        margin-top: 4px;
+        font-size: 0.61rem;
         color: var(--slate-500);
       }
 
@@ -408,31 +416,33 @@
 
       .project-list {
         display: grid;
-        gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
       }
 
       .project-item {
-        padding: 9px 10px;
+        padding: 7px 8px;
         border: 1px solid var(--slate-200);
-        border-radius: 10px;
+        border-radius: 8px;
         background: var(--slate-100);
       }
 
       .project-name {
-        font-size: 0.76rem;
+        font-size: 0.67rem;
         font-weight: 800;
         color: var(--slate-900);
       }
 
       .project-desc {
         margin-top: 3px;
-        font-size: 0.7rem;
+        font-size: 0.61rem;
+        line-height: 1.35;
         color: var(--slate-600);
       }
 
       .compact-note {
-        margin-top: 3px;
-        font-size: 0.68rem;
+        margin-top: 4px;
+        font-size: 0.59rem;
         color: var(--slate-500);
       }
 
@@ -443,7 +453,7 @@
 
       @media print {
         html {
-          font-size: 12px;
+          font-size: 11px;
         }
 
         body {
@@ -453,6 +463,20 @@
         .page {
           margin: 0;
           box-shadow: none;
+        }
+
+        .header {
+          padding: 8mm 10mm 6mm;
+        }
+
+        .content {
+          grid-template-columns: 58mm 1fr;
+          gap: 6mm;
+          padding: 6mm 10mm 7mm;
+        }
+
+        .section {
+          margin-bottom: 4.5mm;
         }
 
         a {
@@ -470,7 +494,7 @@
         }
 
         .header {
-          padding: 26px 20px 18px;
+          padding: 22px 18px 16px;
         }
 
         .header-top,
@@ -483,7 +507,11 @@
         }
 
         .content {
-          padding: 20px;
+          padding: 18px;
+        }
+
+        .project-list {
+          grid-template-columns: 1fr;
         }
 
         .sidebar {
@@ -530,36 +558,23 @@
             <div class="panel stack">
               <div class="skill-group">
                 <div class="label">Frontend</div>
-                <div class="tags">
-                  <span class="tag">React</span>
-                  <span class="tag">TypeScript</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Next.js</span>
-                  <span class="tag">HTML5</span>
-                  <span class="tag">CSS3</span>
-                  <span class="tag">Tailwind CSS</span>
+                <div class="skill-line">
+                  React, TypeScript, JavaScript, Next.js, HTML5, CSS3, Tailwind
+                  CSS
                 </div>
               </div>
 
               <div class="skill-group">
                 <div class="label">Backend</div>
-                <div class="tags">
-                  <span class="tag">Node.js</span>
-                  <span class="tag">Express.js</span>
-                  <span class="tag">MongoDB</span>
-                  <span class="tag">REST APIs</span>
-                  <span class="tag">JWT Auth</span>
+                <div class="skill-line">
+                  Node.js, Express.js, MongoDB, REST APIs, JWT Auth
                 </div>
               </div>
 
               <div class="skill-group">
                 <div class="label">Tools</div>
-                <div class="tags">
-                  <span class="tag">Git</span>
-                  <span class="tag">GitHub</span>
-                  <span class="tag">Jest</span>
-                  <span class="tag">Swagger</span>
-                  <span class="tag">Firebase</span>
+                <div class="skill-line">
+                  Git, GitHub, Jest, Swagger, Firebase
                 </div>
               </div>
             </div>

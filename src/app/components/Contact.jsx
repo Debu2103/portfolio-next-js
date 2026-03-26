@@ -13,7 +13,7 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_ccizs79",
+        "service_02qrzx8",
         "template_ay9iycv",
         form.current,
         "ZTEwb_0sV_ODJumi1"
@@ -24,9 +24,9 @@ const Contact = () => {
             title: "Message Sent! 🚀",
             text: "Thanks for reaching out. I'll get back to you soon!",
             icon: "success",
-            background: "#112240",
+            background: "#111111",
             color: "#e5e7eb",
-            confirmButtonColor: "#00d4ff",
+            confirmButtonColor: "#d4af37",
           });
           form.current.reset();
         },
@@ -35,9 +35,9 @@ const Contact = () => {
             title: "Oops!",
             text: "Something went wrong. Please try again.",
             icon: "error",
-            background: "#112240",
+            background: "#111111",
             color: "#e5e7eb",
-            confirmButtonColor: "#ff2d75",
+            confirmButtonColor: "#d4af37",
           });
         }
       );

@@ -48,13 +48,7 @@ const Main = () => {
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="text-xs uppercase tracking-widest text-gray-400 font-medium">
-              Available for opportunities
-            </span>
-          </div>
+
 
           {/* Main Heading */}
           <h1 className="py-4 text-white leading-tight">

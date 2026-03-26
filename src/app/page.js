@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 import ParticlesBg from "./components/ParticlesBg";
+import SolarSystem from "./components/SolarSystem";
 
 export default function Home() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -41,16 +42,15 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen">
-      {/* Spotlight that follows cursor */}
-      <div
-        className="spotlight hidden lg:block"
-        style={{ left: mousePos.x, top: mousePos.y }}
-      />
+      {/* Solar System background */}
+      <SolarSystem />
+
+
 
       {/* Ambient glows */}
-      <div className="ambient-glow w-[600px] h-[600px] bg-neon-blue/30 -top-[200px] -left-[200px]" />
-      <div className="ambient-glow w-[500px] h-[500px] bg-neon-purple/20 top-[40%] -right-[200px]" />
-      <div className="ambient-glow w-[400px] h-[400px] bg-neon-pink/15 -bottom-[100px] left-[30%]" />
+      <div className="ambient-glow w-[600px] h-[600px] bg-gold-secondary/10 -top-[200px] -left-[200px]" />
+      <div className="ambient-glow w-[500px] h-[500px] bg-gold-primary/10 top-[40%] -right-[200px]" />
+      <div className="ambient-glow w-[400px] h-[400px] bg-gold-accent/5 -bottom-[100px] left-[30%]" />
 
       {/* Floating particles */}
       <ParticlesBg />
